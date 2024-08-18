@@ -9,11 +9,37 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="CSS/all.min.css">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 
-<body>
+<!-- 
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
+-->
+
+<body>
+    <span class="info">
+        <i class="fa-solid fa-circle-info"></i></span>
+    <div class="layout hidden"></div>
+    <div class="modal hidden">
+        <i class="fa-solid fa-x"></i>
+        <h1>How to play</h1>
+        <ol>
+            <li>The game begins with "Player 1" as the active player.</li>
+            <li>Tap the "ROLL DICE" button to begin rolling the dice. The number shown on the dice will be added to the
+                current score of the active player.</li>
+            <li>If the dice lands on "1," the current score is reset to 0 and the second player is given the opportunity
+                to play.</li>
+            <li>If you believe that rolling the dice again will result in a "1," tap the "Hold" button, and your current
+                score will be added to the total score.</li>
+            <li>The game is won by the first player to reach "100."</li>
+            <li>To begin a new game, click on the "NEW GAME" button.</li>
+        </ol>
+    </div>
     <script src="JS/script.js"></script>
 </body>
 
