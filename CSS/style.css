@@ -7,7 +7,7 @@
 body {
     font-family: "Nunito", sans-serif;
     height: 100vh;
-    background-image: linear-gradient(to left top, #581c87, #9d174d);
+    background: linear-gradient(to top left, #753682, #bf2e34);
 }
 
 /*****************info Sectio**************/
@@ -90,4 +90,114 @@ body {
 
 .hidden {
     display: none;
+}
+
+/*********************PLAYERS*********************/
+main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1050px;
+    margin-inline: auto;
+    background-color: #fff;
+    height: 65%;
+    display: flex;
+    border-radius: 50%;
+}
+
+.p1 {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.p2 {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.player {
+    width: 50%;
+    height: 100%;
+    padding: 5rem 6rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #B57A9D;
+}
+
+.current {
+    display: inline-block;
+    background-color: #C7365F;
+    color: white;
+    padding: 12px 64px;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 100;
+    border-radius: 8px;
+}
+
+.current .crnt-score {
+    font-size: 36px;
+    font-weight: 500;
+    margin-block: 12px 0px;
+}
+
+.score {
+    color: #c7365f;
+    font-size: 80px;
+
+}
+
+.player h1 {
+    color: #333;
+    font-size: 44px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.btns {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 85%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.together {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.btns button {
+    cursor: pointer;
+    background-color: #ffffff9c;
+    font-size: 24px;
+    color: #333333e5;
+    font-weight: 100;
+    border: 0;
+    padding: 8px 32px;
+    border-radius: 24px;
+}
+
+/********** focus for the player's turn **********/
+.focus {
+    background-color: #D7AFBF;
+}
+
+.focus h1 {
+    font-weight: 700;
+}
+
+img {
+    width: 35%;
 }

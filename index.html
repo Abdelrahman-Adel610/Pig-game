@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
         rel="stylesheet">
+    <link rel="shortcut icon" href="Images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="CSS/all.min.css">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
@@ -23,7 +24,8 @@ SPACING SYSTEM (px)
 
 <body>
     <span class="info">
-        <i class="fa-solid fa-circle-info"></i></span>
+        <i class="fa-solid fa-circle-info"></i>
+    </span>
     <div class="layout hidden"></div>
     <div class="modal hidden">
         <i class="fa-solid fa-x"></i>
@@ -40,6 +42,42 @@ SPACING SYSTEM (px)
             <li>To begin a new game, click on the "NEW GAME" button.</li>
         </ol>
     </div>
+    <main>
+        <div class="player p1 focus">
+            <div>
+                <h1>player 1</h1>
+                <p class="score sc1">0</p>
+            </div>
+            <div class="current crnt1">
+                <p>current <br>
+                </p>
+                <div class="crnt-score">
+                    0
+                </div>
+            </div>
+        </div>
+        <div class="player p2">
+            <div>
+                <h1>player 2</h1>
+                <p class="score sc1">0</p>
+            </div>
+            <div class="current crnt2">
+                <p>current <br>
+                </p>
+                <div class="crnt-score">
+                    0
+                </div>
+            </div>
+        </div>
+        <div class="btns">
+            <button>🔄 New game</button>
+            <img src="" alt="dice" class="dice hidden">
+            <div class="together ">
+                <button>🎲 Roll dice</button>
+                <button>🤚 Hold</button>
+            </div>
+        </div>
+    </main>
     <script src="JS/script.js"></script>
 </body>
 
