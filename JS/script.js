@@ -29,18 +29,24 @@ function removeModal() {
   layout.classList.add("hidden");
   modal.classList.add("hidden");
 }
+function updateCurrentScores() {
+  cScore1.textContent = currentScore1;
+  cScore2.textContent = currentScore2;
+}
+function updateFinalScores() {
+  fScore1.textContent = bank1;
+  fScore2.textContent = bank2;
+}
 function takeTurns() {
   if (!state) {
     bank1 += currentScore1;
     currentScore1 = 0;
-    cScore1.textContent = currentScore1;
   } else {
     bank2 += currentScore2;
     currentScore2 = 0;
-    cScore2.textContent = currentScore2;
   }
-  fScore1.textContent = bank1;
-  fScore2.textContent = bank2;
+  updateCurrentScores();
+  updateFinalScores();
   state = !state;
   player1.classList.toggle("focus");
   player2.classList.toggle("focus");
@@ -55,10 +61,8 @@ function resetGame() {
     player1.classList.toggle("focus");
     player2.classList.toggle("focus");
   }
-  fScore1.textContent = bank1;
-  fScore2.textContent = bank2;
-  cScore1.textContent = currentScore1;
-  cScore2.textContent = currentScore2;
+  updateCurrentScores();
+  updateFinalScores();
 }
 /**********************EVENTS**********************/
 /*modal window events*/
@@ -86,11 +90,10 @@ rollDice.addEventListener("click", function () {
   if (randomNum !== 1) {
     if (!state) {
       currentScore1 += randomNum;
-      cScore1.textContent = currentScore1;
     } else {
       currentScore2 += randomNum;
-      cScore2.textContent = currentScore2;
     }
+    updateCurrentScores();
   } else {
     currentScore1 = currentScore2 = 0;
     takeTurns();
