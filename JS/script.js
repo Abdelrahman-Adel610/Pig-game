@@ -13,7 +13,11 @@ let player1 = document.querySelector(".p1 ");
 let player2 = document.querySelector(".p2 ");
 let cScore1 = document.querySelector(".p1 .crnt-score");
 let cScore2 = document.querySelector(".p2 .crnt-score");
+let fScore1 = document.querySelector(".sc1");
+let fScore2 = document.querySelector(".sc2");
 /**********************VARIABLES**********************/
+let bank1 = 0;
+let bank2 = 0;
 let currentScore1 = 0;
 let currentScore2 = 0;
 let state = 0;
@@ -58,6 +62,17 @@ rollDice.addEventListener("click", function () {
 });
 
 hold.addEventListener("click", function () {
+  if (!state) {
+    bank1 += currentScore1;
+    currentScore1 = 0;
+    cScore1.textContent = currentScore1;
+  } else {
+    bank2 += currentScore2;
+    currentScore2 = 0;
+    cScore2.textContent = currentScore2;
+  }
+  fScore1.textContent = bank1;
+  fScore2.textContent = bank2;
   state = !state;
   player1.classList.toggle("focus");
   player2.classList.toggle("focus");
