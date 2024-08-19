@@ -36,6 +36,8 @@ body {
     top: 0;
     bottom: 0;
     background-color: #00000069;
+    z-index: 1;
+
 }
 
 .modal {
@@ -51,6 +53,8 @@ body {
     line-height: 1.2;
     border-radius: .9375rem;
     box-shadow: 0 0 .0625rem .0625rem #0000006c;
+    z-index: 2;
+
 }
 
 .modal ol {
