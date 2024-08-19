@@ -29,6 +29,37 @@ function removeModal() {
   layout.classList.add("hidden");
   modal.classList.add("hidden");
 }
+function takeTurns() {
+  if (!state) {
+    bank1 += currentScore1;
+    currentScore1 = 0;
+    cScore1.textContent = currentScore1;
+  } else {
+    bank2 += currentScore2;
+    currentScore2 = 0;
+    cScore2.textContent = currentScore2;
+  }
+  fScore1.textContent = bank1;
+  fScore2.textContent = bank2;
+  state = !state;
+  player1.classList.toggle("focus");
+  player2.classList.toggle("focus");
+}
+function resetGame() {
+  bank1 = 0;
+  bank2 = 0;
+  currentScore1 = 0;
+  currentScore2 = 0;
+  state = 0;
+  if (!player1.classList.contains("focus")) {
+    player1.classList.toggle("focus");
+    player2.classList.toggle("focus");
+  }
+  fScore1.textContent = bank1;
+  fScore2.textContent = bank2;
+  cScore1.textContent = currentScore1;
+  cScore2.textContent = currentScore2;
+}
 /**********************EVENTS**********************/
 /*modal window events*/
 info.addEventListener("click", function () {
@@ -52,28 +83,23 @@ rollDice.addEventListener("click", function () {
   let randomNum = Math.trunc(Math.random() * 6) + 1;
   diceImage.classList.remove("hidden");
   diceImage.setAttribute("src", `Images/dice-${randomNum}.png`);
-  if (!state) {
-    currentScore1 += randomNum;
-    cScore1.textContent = currentScore1;
+  if (randomNum !== 1) {
+    if (!state) {
+      currentScore1 += randomNum;
+      cScore1.textContent = currentScore1;
+    } else {
+      currentScore2 += randomNum;
+      cScore2.textContent = currentScore2;
+    }
   } else {
-    currentScore2 += randomNum;
-    cScore2.textContent = currentScore2;
+    currentScore1 = currentScore2 = 0;
+    takeTurns();
   }
 });
 
 hold.addEventListener("click", function () {
-  if (!state) {
-    bank1 += currentScore1;
-    currentScore1 = 0;
-    cScore1.textContent = currentScore1;
-  } else {
-    bank2 += currentScore2;
-    currentScore2 = 0;
-    cScore2.textContent = currentScore2;
-  }
-  fScore1.textContent = bank1;
-  fScore2.textContent = bank2;
-  state = !state;
-  player1.classList.toggle("focus");
-  player2.classList.toggle("focus");
+  takeTurns();
+});
+newGame.addEventListener("click", function () {
+  resetGame();
 });
