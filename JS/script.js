@@ -47,6 +47,15 @@ function takeTurns() {
   }
   updateCurrentScores();
   updateFinalScores();
+  if (!state && bank1 >= 100) {
+    player1.style.backgroundColor = "#22c55e";
+    rollDice.disabled = true;
+    hold.disabled = true;
+  } else if (state && bank2 >= 100) {
+    player2.style.backgroundColor = "#22c55e";
+    rollDice.disabled = true;
+    hold.disabled = true;
+  }
   state = !state;
   player1.classList.toggle("focus");
   player2.classList.toggle("focus");
@@ -57,6 +66,10 @@ function resetGame() {
   currentScore1 = 0;
   currentScore2 = 0;
   state = 0;
+  rollDice.disabled = false;
+  hold.disabled = false;
+  player1.style.backgroundColor = "#B57A9D";
+  player2.style.backgroundColor = "#B57A9D";
   if (!player1.classList.contains("focus")) {
     player1.classList.toggle("focus");
     player2.classList.toggle("focus");

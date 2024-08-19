@@ -195,7 +195,7 @@ main {
 
 /********** focus for the player's turn **********/
 .focus {
-    background-color: #D7AFBF;
+    background-color: #D7AFBF !important;
 }
 
 .focus h1 {
