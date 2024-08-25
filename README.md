@@ -17,8 +17,16 @@ The Pig Game is a fun and simple dice game built with js and styled with CSS. �
 ## Technologies Used
 
 - **CSS:** For styling the game components. 🎨
+- **WebFonts:** For icons. 📁
 - **JavaScript:** For game logic and interaction. 💻
   
+  ## Project Structure 
+
+- `index.html`: The main HTML file.
+- `CSS/style.css`: The CSS file for styling the game.
+- `CSS/mediaQuery.css`: Making the game responsive to all screens.
+- `JS/script.js`: The JavaScript file containing the game logic.
+
 ## Installation
 
 To get started with the Pig Game project, follow these steps:
